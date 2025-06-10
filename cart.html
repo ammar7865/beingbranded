@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Being Branded</title>
+  <meta name="description" content="Review the products you've added to your Being Branded cart. Checkout when you're ready to own your unique style.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Your Cart - Being Branded">
+<meta property="og:description" content="View items you’re about to purchase from Being Branded.">
+<meta property="og:image" content="https://i.ibb.co/Xz2tsDd/beingbranded-cover.jpg">
+<meta property="og:url" content="https://beingbranded.in/cart.html">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar (reuse your existing one here) -->
+  <header class="navbar">
+<div class="logo">
+  <a href="index.html">
+    <img src="BBLOGO.PNG" alt="Being Branded Logo"  >
+  </a>
+</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="index.html" class="products"><i class="fas fa-tshirt"></i> Shop</a></li>
+     <!-- <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>-->
+      <li><a href="#footer"><i class="fas fa-phone-alt"></i> Contact</a></li>
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span> </a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Cart Section -->
+      <main style="flex-grow: 1;">
+  <section class="cart-section">
+    <h2>YOUR CART</h2>
+    <div class="cart-container" id="cart-container"></div>
+    <div class="cart-summary">
+      <h3>Total:  &#8377;<span id="total-price">0</span></h3>
+  </section>
+<div style="text-align: center; margin-top: 30px;">
+  <a href="checkout.html">
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </a>
+</div>
+</main>
+  <!-- Footer -->
+  <footer id="footer">
+  <div class="footer-content">
+    <p>© 2025 Being Branded. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>

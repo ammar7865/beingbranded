@@ -1,0 +1,639 @@
+
+/* ========== YOUR ORIGINAL STYLES ========== */
+body {
+  font-family:'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000; 
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  min-height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+ .navbar .logo {
+  /*font-size: 1.5rem;*/
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+ /* height: 60px; */
+  /*overflow: visible;*/
+}
+
+.navbar .logo img {
+  height: auto; /* Allow natural height based on width */
+  max-height: 50px; /* Set your desired desktop logo height here */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the whole image is visible */
+  /* REMOVE THE FOLLOWING LINES: */
+  /* transform: scale(1.6); */
+  /* transform-origin: left center; */
+  /* margin-top: -10px; */
+  vertical-align: middle; /* Good for alignment, keep this */
+  display: block; /* Ensure it behaves as a block element */
+}
+/*.navbar .logo img {
+  max-height: 100%;
+  height: 47px; /* stays within navbar 
+  width: auto;
+  transform: scale(1.6);
+  transform-origin: left center;
+  display: block;
+  margin-top: -10px; 
+}*/
+
+
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar ul li {
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif; /* Fixed font for navbar options */
+}
+
+/* Hover effect for navbar links */
+.navbar ul li a {
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.navbar ul li a:hover {
+  color: #ffcc00; /* Yellow hover effect */
+}
+
+.hero {
+  height: 90vh;
+  background: url("assets/hero-bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
+  position: relative; /* Needed for overlay */
+}
+
+.hero::before { /* Black overlay for hero section */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(3, 0, 0); /* Black with 50% opacity */
+  z-index: 1; /* Ensure it's above the background image but below text */
+}
+
+.hero-text {
+  position: relative; /* Position relative to z-index */
+  z-index: 2; /* Ensure text is above the overlay */
+  color: white; /* Ensure text is visible on black background */
+}
+
+.hero-text h1 {
+  font-size: 4rem; /* Increased size for "Be Unique, Be Branded" */
+  font-family: 'Brush Script MT', cursive; /* Cursive font */
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 15px; /* Spacing between buttons */
+}
+
+.cta-buttons .btn:first-child { /* Shop Now button */
+  background-color: #ff6600;
+  color: white;
+  border: 2px solid #ff6600;
+}
+
+.cta-buttons .btn:first-child:hover {
+  background-color: #e65c00;
+  border-color: #e65c00;
+}
+
+.cta-buttons .btn.secondary { /* Explore button */
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-buttons .btn.secondary:hover {
+  background-color: white;
+  color: #ff6600;
+}
+
+
+.categories,
+.featured,
+.products,
+.product-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.category-grid,
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grids */
+  width: 100%;
+}
+
+.category-card,
+.product-card {
+  background: #ffee00;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+}
+
+.category-card img,
+.product-card img {
+  width: 100%;
+  height: 250px; /* Fixed image size for all products */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.product-info {
+  padding: 10px 0;
+}
+
+.product-price {
+  color: #ffb804;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif;
+}
+/*roduct-price, .price {
+  font-family: "Arial", "Helvetica", sans-serif;
+}*/
+.product-card h3,
+.product-card .price {
+  color: #000000; /* black for contrast on yellow background */
+  font-weight: bold;
+}
+
+.add-to-cart {
+  background: #ff6600;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Smooth transition for hover */
+}
+.product-info .add-to-cart-btn {
+  margin-top: 15px; /* Adjust this if needed, to give space below the price */
+}
+.add-to-cart:hover {
+  background: #e65c00; /* Darker orange on hover */
+}
+
+/* Cart Page Styles */
+.cart-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #222; /* Black background for cart section */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: white; /* Text color for cart section */
+}
+
+.cart-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #333; /* Slightly lighter black for individual items */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item img {
+  width: 100px; /* Fixed image size for cart items */
+  height: 100px; /* Fixed image size for cart items */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cart-item .item-details {
+  flex-grow: 1;
+  color: white;
+}
+
+.cart-item .item-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.cart-item .item-details p {
+  margin: 5px 0;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantity-control button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-control button:hover {
+  background-color: #e65c00;
+}
+
+.cart-item .item-details button { /* Remove button */
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item .item-details button:hover {
+  background-color: #c82333;
+}
+
+.cart-summary {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+ 
+.checkout-form {
+    max-width: 500px ;
+  margin: 40px auto; 
+  padding: 30px; 
+  background-color: #222;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+  }
+.checkout-btn{
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.checkout-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.checkout-btn::before {
+  position: absolute;
+  inset: 1px;
+  background: #272727;
+  border-radius: 9px;
+  transition: 0.5s;
+}
+
+.checkout-btn:hover::before {
+  opacity: 0.7;
+}
+
+.checkout-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  border-radius: 9px;
+  transition: 0.5s;
+  opacity: 0;
+  filter: blur(20px);
+}
+
+.checkout-btn:hover:after {
+  opacity: 1;
+}
+
+.checkout-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ff6600; 
+  font-family: 'Georgia', serif; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  font-size: 2.5rem; 
+  font-weight: bold; 
+}
+
+.checkout-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  padding: 12px 16px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1rem;
+ width: 100%;
+   box-sizing: border-box; /* Essential to prevent padding from expanding width */
+  background-color: #ffffff;
+  color: rgb(3, 3, 3);
+}
+
+.checkout-form button {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  width: 100%; /* Keep 100% width, but now it's 100% of the *smaller* form container */
+  box-sizing: border-box; /* Apply box-sizing here too */
+}
+
+.checkout-form button:hover {
+  background-color: #e65c00;
+}
+@media only screen and (max-width: 768px) {
+  .checkout-form {
+    margin: 20px; /* Keep existing margin for smaller screens */
+    padding: 20px; /* Keep existing padding for smaller screens */
+    max-width: none; /* Remove max-width on small screens to allow it to be fluid */
+    width: auto; /* Allow width to be fluid on smaller screens */
+  }
+}
+footer {
+  background: #111;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.social-links {
+  margin-top: 10px; 
+}
+
+.social-links a {
+  margin: 0 10px; /* Spacing between social icons */
+  font-size: 1.5rem; 
+  color: white;
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.social-links a:hover {
+  color: #ffcc00; /* Yellow hover effect for social icons */
+}
+
+
+/* ========== RESPONSIVE FIX ========== */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    min-height: 60px;
+    height: auto;
+  }
+
+   .navbar .logo img {
+    max-height: 35px; 
+    width: auto; 
+   }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+
+.categories,
+  .featured,
+  .products,
+  .product-section { /* These are the parent sections of your product grids */
+    padding-left: 20px; /* Add consistent left padding to sections */
+    padding-right: 20px; /* Add consistent right padding to sections */
+    width: 100%; /* Ensure sections take full width of the viewport */
+    box-sizing: border-box; /* Crucial: padding is included in the width */
+  }
+  
+.hero {
+    padding-left: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-buttons .btn {
+    margin-right: 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .product-grid,
+  .category-grid {
+grid-template-columns: 1fr; /* This is correct for stacking items vertically */
+    padding: 0; /* REMOVE any padding from here to prevent horizontal overflow */
+    width: 100%; /* Ensure the grid takes 100% of its parent's content area */
+    max-width: 100%; /* Ensure it doesn't accidentally exceed its parent */
+    margin: 0 auto; /* Keep centered within its parent */
+    overflow-x: hidden; 
+  }
+
+  .product-card,
+  .category-card {
+    width: 100%; /* Make each card take the full width of its grid column */
+    box-sizing: border-box; /* Ensure padding/border are included in the card's width */
+  }
+
+  .product-card img,
+  .category-card img {
+    height: 200px;
+  }
+
+  body {
+  overflow-x: hidden; /* Ensures no horizontal scrolling on the entire page */
+}
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-content .social-links {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .cart-section {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item .item-details {
+    width: 100%;
+  }
+
+  .quantity-control {
+    justify-content: center;
+  }
+
+  .cart-item .item-details button {
+    width: 100%;
+  }
+}
+/* admin pannel */
+.admin-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.admin-container input,
+.admin-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.admin-container button {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.product-info .product-price {
+  color: #ffbb00; /* Set a dark color that contrasts with the white product card background */
+  font-size: 1.1rem; /* Make the font size readable */
+  font-weight: bold; /* Make the price stand out */
+  margin-top: 8px; /* Add some space above the price */
+  margin-bottom: 12px; /* Add some space below the price */
+}

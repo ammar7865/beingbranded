@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Being Branded | Unique & Affordable Fashion for Everyone</title>
+
+  <!-- ✅ Advanced SEO Meta -->
+  <meta name="description" content="Discover stylish, affordable, and high-quality fashion at Being Branded. Shop unique outfits, accessories, and more — curated for trendsetters like you." />
+  <meta name="keywords" content="Being Branded, fashion store, trendy clothes, unique style, online shopping India, affordable fashion, streetwear, e-commerce clothing">
+  <meta name="author" content="Being Branded">
+
+  <!-- ✅ Open Graph / WhatsApp & Instagram Sharing -->
+  <meta property="og:title" content="Being Branded | Unique Fashion Store" />
+  <meta property="og:description" content="Shop trendy and affordable clothing, curated just for you." />
+  <meta property="og:image" content="https://i.ibb.co/Xz2tsDd/beingbranded-cover.jpg" />
+  <meta property="og:url" content="https://beingbranded.in/" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://beingbranded.in/" />
+
+  <!-- ✅ Favicon (Optional) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="navbar">
+ <div class="logo">
+  <a href="index.html">
+    <img src="BBLOGO.PNG" alt="Being Branded Logo"  >
+  </a>
+</div>
+  <nav>
+    <ul>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#products"><i class="fas fa-tshirt"></i> Shop</a></li>
+     <!-- <li><a href="#"><i class="fas fa-tags"></i> Offers</a></li> -->
+      <li><a href="#footer"><i class="fas fa-phone-alt"></i> Contact</a></li>
+   <!--  <li><a href="#"><i class="fas fa-user"></i> Account</a></li> --> 
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart  <span id="cart-count">0</span> </a></li>
+
+    </ul>
+  </nav>
+</header>
+
+  <!-- Hero Section -->
+   <main style="flex-grow: 1;">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Be Unique,<br>Be Branded</h1>
+      <p>Style that speaks. Trends that last.</p>
+      <div class="cta-buttons">
+        <a href="#products" class="btn">Shop Now</a>
+        <!-- <a href="#" class="btn secondary">Explore</a> -->
+      </div>
+    </div>
+    <model-viewer src="assets/your-3d-model.glb"
+              alt="A 3D model of your product"
+              auto-rotate camera-controls
+              style="width: 400px; height: 400px; position: absolute; right: 80px; bottom: 50px; z-index: 2;">
+</model-viewer>
+  </section>
+
+  <!-- Categories Section 
+  <section class="categories">
+    <h2>SHOP BY CATEGORY</h2>
+    <div class="category-grid">
+      <!-- Add category cards here
+      <div class="category-card">
+        <img src="watch1.jpg" alt="WRIST WATCH">
+        <h3>WRIST WATCH</h3>
+      </div>
+      <div class="category-card">
+        <img src="goggles1.jpg" alt="TRENDY GOGGLES">
+        <h3>TRENDY GOGGLES</h3>
+      </div>
+      <!-- Add more categories as needed -->
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured">
+    <h2>NEW ARRIVALS</h2>
+    <div class="product-grid">
+      <!-- Product Card -->
+      <div class="product-card">
+        <img src="watch2.jpg" alt="Product 1">
+        <h3>FANCY WATCH</h3>
+<p class="price">&#8377;599</p>
+  <button class="add-to-cart" onclick='addToCart({ id: 1, name: "FANCY WATCH", price: 799, image: "watch2.jpg" })'>
+    Add to Cart
+  </button>
+      </div>
+      <!-- Add more product cards -->
+    </div>
+  </section>
+<section class="products" id="products">
+  <h2 class="section-title">BEST SELLERS</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="tshirt.jpg" alt="Product 1">
+      <h3>Casual T-Shirt</h3>
+   <p class="price">&#8377;599</p>
+       <button  class="add-to-cart" onclick='addToCart({ id: 2, name: " T-Shirt", price: 599, image: "tshirt.jpg" })'>
+    Add to Cart
+  </button>
+    </div>
+    <div class="product-card">
+      <img src="hoodie.jpg" alt="Product 2">
+      <h3>Stylish Hoodie</h3>
+   <p class="price">&#8377;599</p>
+      <button class="add-to-cart" onclick='addToCart({ id: 3, name: "Stylish Hoodie", price: 999, image: "hoodie.jpg" })'>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="jeans.jpg" alt="Product 3">
+      <h3>Trendy Jeans</h3>
+<p class="price">&#8377;599</p>
+      <button class="add-to-cart" onclick='addToCart({ id: 4, name: "trendy jeans", price: 1499, image: "jeans.jpg" })' >Add to Cart</button>
+    </div>
+  </div>
+
+  <section class="product-section">
+  <div class="product-container">
+    <h2 class="section-title">LIVE PRODUCTS</h2>
+    <div class="product-grid" id="product-list"></div>
+  </div>
+</section>
+</main>
+  <!-- Footer -->
+  
+  <footer id="footer">
+  <div class="footer-content">
+    <p>© 2025 Being Branded. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Firebase Core -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+ 
+<script src="script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Store",
+  "name": "Being Branded",
+  "image": "https://i.ibb.co/Xz2tsDd/beingbranded-cover.jpg",
+  "url": "https://beingbranded.in/",
+  "description": "Shop unique fashion from Being Branded — India’s most stylish store for men and women.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Indore",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://instagram.com/beingbranded",
+    "https://facebook.com/beingbranded",
+    "https://www.linkedin.com/company/beingbranded"
+  ]
+}
+</script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+</html>

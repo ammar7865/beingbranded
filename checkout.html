@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Being Branded</title>
+  <meta name="description" content="Securely enter your delivery details and place your order with Being Branded.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Checkout - Being Branded">
+<meta property="og:description" content="Enter your delivery address and finalize your purchase.">
+<meta property="og:image" content="https://i.ibb.co/Xz2tsDd/beingbranded-cover.jpg">
+<meta property="og:url" content="https://beingbranded.in/checkout.html">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+ <header class="navbar">
+<div class="logo">
+  <a href="index.html">
+    <img src="BBLOGO.PNG" alt="Being Branded Logo"  >
+  </a>
+</div>
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="index.html" class="products"><i class="fas fa-tshirt"></i> Shop</a></li>
+     <!---<li><a href="#"><i class="fas fa-tags"></i> Offers</a></li> --> 
+      <!-- <li><a href="#footer"><i class="fas fa-phone-alt"></i> Contact</a></li> -->
+        <!--  <li><a href="#"><i class="fas fa-user"></i> Account</a></li> -->
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart  <span id="cart-count">0</span> </a></li>
+
+    </ul>
+  </nav>
+</header>
+
+ <main style="flex-grow: 1;">
+  <section class="checkout-form">
+    <h2>CHECKOUT</h2>
+    <form id="orderForm">
+      <input type="text" placeholder="Full Name" name="name" required />
+      <input type="email" placeholder="Email" name="email" required />
+      <input type="tel" placeholder="Phone Number" name="phone" required />
+      <textarea placeholder="Address" name="address" required></textarea>
+      <textarea placeholder="Additional Notes (optional)" name="notes"></textarea>
+      <button type="submit">Place Order</button>
+    </form>
+    <div id="order-success" style="display:none; color:green; margin-top:20px;">
+      ✅ Order placed successfully!
+    </div>
+  </section>
+</main>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

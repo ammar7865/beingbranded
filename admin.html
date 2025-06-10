@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel | Being Branded</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  </head>
+<body>
+  <div class="admin-container">
+    <h1>Add Product</h1>
+    <form id="productForm">
+      <input type="text" id="name" placeholder="Product Name" required>
+      <input type="text" id="price" placeholder="Price" required>
+<input type="text" id="image" placeholder="Paste Image URL from ImgBB" required>
+      <textarea id="description" placeholder="Product Description"></textarea>
+      <button type="submit">Add Product</button>
+    </form>
+   <button onclick="logout()">Logout</button>
+
+    <h2>Product List</h2>
+    <div id="productList"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
